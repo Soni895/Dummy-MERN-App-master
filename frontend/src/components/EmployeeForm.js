@@ -8,7 +8,7 @@ const EmployeeForm = () => {
   const navigate = useNavigate();
 
   const createEmployee = async (data) => {
-
+   
     const savedUserResponse = await fetch(
       `${process.env.REACT_APP_BASE_URL}/createUser`,
       {
@@ -19,15 +19,16 @@ const EmployeeForm = () => {
         body: JSON.stringify({ ...data }),
       }
     );
+    console.log("dat=>>>>>",data,"\n");
 
-    console.log("FORM RESPONSE......", savedUserResponse);
+    // console.log("FORM RESPONSE......", savedUserResponse);
 
     navigate("/")
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit(createEmployee)} className="mt-8">
+      <form onSubmit={handleSubmit(createEmployee)} className="mt-8 bg">
         <div className="space-y-5">
           <div>
             <label
